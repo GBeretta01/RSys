@@ -1,6 +1,7 @@
 import sqlite3
 import time
 import colorama
+
 conn = sqlite3.connect('ReginaDB.db')
 cursor = conn.cursor()
 
@@ -10,7 +11,7 @@ def dots():
         for j in range(i):
             print(".", end="")
         print()
-        time.sleep(1)
+        time.sleep(0.5)
 
 def log_in():
     user_v = input("User: ")
@@ -21,7 +22,9 @@ def log_in():
 
     if log_in is not None and log_in[2] == pass_v:
         dots()
-        return True
+        if log_in[1] == 'admin':
+            import admin
+            admin.menu_admin()
     else:
         print("User or pass no valid.")
         return False
