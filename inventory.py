@@ -37,7 +37,6 @@ def show_inventory():
     cursor.execute('SELECT * FROM productos')
     result_inventory = cursor.fetchall()
     for row in result_inventory:
-        print(f"Id: {Row[0]}")
         print(row)
 
 def search_inventory():
