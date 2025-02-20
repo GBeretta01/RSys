@@ -39,7 +39,7 @@ def authenticate(username, password):
 def manage_users():
     st.header("Gestión de Usuarios")
     option = st.selectbox("Seleccione operación:", 
-                        ["Ver usuarios", "Crear usuario", "Eliminar usuario", "Volver"])
+                        ["Ver usuarios", "Crear usuario", "Eliminar usuario"])
     
     if option == "Ver usuarios":
         users = pd.read_csv(USERS_FILE)
@@ -78,7 +78,7 @@ def manage_users():
 def manage_inventory():
     st.header("Gestión de Inventario")
     option = st.selectbox("Seleccione operación:", 
-                        ["Ver inventario", "Buscar producto", "Agregar producto", "Eliminar producto", "Volver"])
+                        ["Ver inventario", "Buscar producto", "Agregar producto", "Eliminar producto"])
     
     if option == "Ver inventario":
         products = pd.read_csv(PRODUCTS_FILE)
